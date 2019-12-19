@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  run-up-database:
+    image: mongo
+    restart: always
+    container_name: run-up-database
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - host_network
+
+networks:
+  host_network:
+    external: true
+
+volumes:
+  mongo-data:
