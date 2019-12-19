@@ -1,0 +1,7 @@
+{
+  "name": "runupto-mongo",
+  "license": "MIT",
+  "scripts": {
+    "start:docker": "docker-compose up"
+  }
+}
