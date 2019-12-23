@@ -13,11 +13,12 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - host_network
+      - db-network
 
 networks:
-  host_network:
-    external: true
+  db-network:
+    driver: bridge
+    name: db-network
 
 volumes:
   mongo-data:
